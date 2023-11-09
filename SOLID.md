@@ -104,49 +104,70 @@
 <p>افزودن یک تابع void با عنوان phone Order Payment</p>
 </td>
 </tr>
-<tr>
+
+
 <td width="64">
-<p><strong>&nbsp;</strong></p>
+<p><strong>3</strong></p>
 </td>
 <td width="198">
-<p>&nbsp;</p>
+<p>Online Order Service</p>
 </td>
 <td width="141">
-<p>&nbsp;</p>
+<p>افزودن تابع های پرداخت تلفنی و سفارش تلفنی</p>
 </td>
 <td width="292">
-<p>&nbsp;</p>
+<p>با توجه به اینکه اینترفیس تغییر می یابد و متد های جدید اضافه میشود، این متد ها باید توسط کلاسهایی که اینترفیس راimplement میکنند نیز پیاده سازی شوند</p>
 </td>
 </tr>
-<tr>
+
 <td width="64">
-<p><strong>&nbsp;</strong></p>
+<p><strong>4</strong></p>
 </td>
 <td width="198">
-<p>&nbsp;</p>
+<p>Onsite Order Service</p>
 </td>
 <td width="141">
-<p>&nbsp;</p>
+<p>افزودن تابع های پرداخت تلفنی و سفارش تلفنی</p>
 </td>
 <td width="292">
-<p>&nbsp;</p>
+<p>با توجه به اینکه اینترفیس تغییر می یابد و متد های جدید اضافه میشود، این متد ها باید توسط کلاسهایی که اینترفیس راimplement میکنند نیز پیاده سازی شوند</p>
 </td>
 </tr>
-<tr>
+
+
+
 <td width="64">
-<p><strong>&nbsp;</strong></p>
+<p><strong>5</strong></p>
 </td>
 <td width="198">
-<p>&nbsp;</p>
+<p>Phone Order Service</p>
 </td>
 <td width="141">
-<p>&nbsp;</p>
+<p>افزودن تابع های موجود در اینترفیس orderservice</p>
 </td>
 <td width="292">
-<p>&nbsp;</p>
+<p>در درون کلاس جدید، متد ها اضافه شده و دستور پرینت در متد مربوطه هرکدام گنجانده میشود</p>
 </td>
 </tr>
-</tbody>
+
+
+
+
+
+<td width="64">
+<p><strong>6</strong></p>
+</td>
+<td width="198">
+<p>Main</p>
+</td>
+<td width="141">
+<p>افزودن امکان انتخاب سفارش تلفنی</p>
+</td>
+<td width="292">
+<p>در متد اصلی برنامه، قابلیت انتخاب کلید 3 برای ثبت سفارش تلفنی، و همچنین اضافه کردن منطق مربوط به آن گنجانده شد</p>
+</td>
+</tr>
+
 </table>
 
 مجموع تعداد تغییرات: ..............

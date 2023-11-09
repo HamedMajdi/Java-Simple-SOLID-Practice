@@ -297,46 +297,47 @@
 </tr>
 <tr>
 <td width="168">
-<p>&nbsp;</p>
+<p>Single Responsibility</p>
 </td>
 <td width="246">
-<p>&nbsp;</p>
+<p>اینترفیس OrderService مسئول هم ثبت سفارش و هم پردازش پرداخت هستند، که دو مسئولیت متمایز هستند.</p>
 </td>
 <td width="284">
-<p>&nbsp;</p>
+<p> می‌توان واسط OrderService را به دو واسط جداگانه تقسیم کرد، به عنوان مثال OrderRegistrationService و OrderPaymentService. سپس هر کلاس پیاده‌سازی، واسط(های) مناسب را پیاده‌سازی می‌کند.</p>
 </td>
 </tr>
 <tr>
 <td width="168">
-<p>&nbsp;</p>
+<p>Liskov Substitution Principle</p>
 </td>
 <td width="246">
-<p>&nbsp;</p>
+<p>کد موجود این اصل را نقض می‌کند زیرا واسطه OrderService دارای متدهایی است که به همه زیرکلاس‌ها قابل اعمال نیستند (برای مثال، متد onlineOrderRegister برای OnSiteOrderService قابل اعمال نیست).</p>
 </td>
 <td width="284">
-<p>&nbsp;</p>
+<p>همانطور که در راهکار SRP پیشنهاد شده است، تقسیم واسط OrderService به دو واسط (OrderRegistrationService و OrderPaymentService) نیز می‌تواند به رفع نقض این اصل کمک کند.</p>
 </td>
 </tr>
 <tr>
 <td width="168">
-<p>&nbsp;</p>
+<p>Interface Segregation Principle</p>
 </td>
 <td width="246">
-<p>&nbsp;</p>
+<p>این اصل بیان می‌کند که کلاس‌های اعمال کننده نباید مجبور شوند به واسطه‌هایی وابسته شوند که از آن‌ها استفاده نمی‌کنند. کد موجود این اصل را نقض می‌کند زیرا واسطه OrderService شامل متدهایی است که همیشه توسط کلاس‌های پیاده‌سازی‌کننده آن مورد استفاده قرار نمی‌گیرد.
+</p>
 </td>
 <td width="284">
-<p>&nbsp;</p>
+<p>مجدداً، تقسیم واسطه OrderService به دو واسط (OrderRegistrationService و OrderPaymentService) می‌تواند این نقض را برطرف کند.</p>
 </td>
 </tr>
 <tr>
 <td width="168">
-<p>&nbsp;</p>
+<p>Dependency Inversion Principle</p>
 </td>
 <td width="246">
-<p>&nbsp;</p>
+<p>کلاس اصلی (Main) به طور مستقیم به کلاس‌های OnlineOrderService، OnSiteOrderService و PhoneOrderService وابسته است که این اصل را نقض می‌کند.</p>
 </td>
 <td width="284">
-<p>&nbsp;</p>
+<p>می‌توان یک Dependency Injection معرفی کرد تا نمونه‌های پیاده‌سازی‌های OrderService ایجاد شود، به طوری که کلاس Main به جای جزئیات سطح پایین به یک انتزاع وابسته باشد </p>
 </td>
 </tr>
 </tbody>

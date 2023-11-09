@@ -1,19 +1,18 @@
-import PaymentServices.OnSiteOrderService;
-import PaymentServices.OnlineOrderService;
-import PaymentServices.OrderService;
-import PaymentServices.PhoneOrderService;
+import PaymentServices.*;
 
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner= new Scanner(System.in);
-        OrderService orderService = null;
+        Scanner scanner = new Scanner(System.in);
+        OrderRegistrationService orderRegistrationService = null;
+        OrderPaymentService orderPaymentService = null;
         String customerName;
         Order order;
-        int customerAnswerForOrder=0;
-        int customerAnswerForPaymentMethod=0;
+        int customerAnswerForOrder = 0;
+        int customerAnswerForPaymentMethod = 0;
+
 
         System.out.println("Enter Customer Name : ");
         customerName = scanner.nextLine();
@@ -36,28 +35,25 @@ public class Main {
         }
 
         //Step2 : Select Payment Method
+
         System.out.println("Enter Your Payment Method (1 for online, 2 for on-site and 3 for phone payment):");
         customerAnswerForPaymentMethod = scanner.nextInt();
-        if(customerAnswerForPaymentMethod==1){
-            orderService = new OnlineOrderService();
-            orderService.onlineOrderRegister(customerName);
-        } else if(customerAnswerForPaymentMethod==2){
-            orderService = new OnSiteOrderService();
-            orderService.onSiteOrderRegister(customerName);
-        } else if(customerAnswerForPaymentMethod==3){
-            orderService = new PhoneOrderService();
-            orderService.phoneOrderRegister(customerName);
+        if (customerAnswerForPaymentMethod == 1) {
+            orderRegistrationService = new OnlineOrderRegistrationService();
+            orderPaymentService = (OrderPaymentService) orderRegistrationService;
+        } else if (customerAnswerForPaymentMethod == 2) {
+            orderRegistrationService = new OnSiteOrderRegistrationService();
+            orderPaymentService = (OrderPaymentService) orderRegistrationService;
+        } else if (customerAnswerForPaymentMethod == 3) {
+            orderRegistrationService = new PhoneOrderRegistrationService();
+            orderPaymentService = (OrderPaymentService) orderRegistrationService;
         }
 
-        //Step3 : pay price
-        System.out.println("Pay Price:");
-        if(orderService instanceof OnlineOrderService){
-            orderService.onlineOrderPayment(order.getTotalPrice());
-        } else if(orderService instanceof OnSiteOrderService){
-            orderService.onSiteOrderPayment(order.getTotalPrice());
-        } else if(orderService instanceof PhoneOrderService){
-            orderService.phoneOrderPayment(order.getTotalPrice());
-        }
+        orderRegistrationService.registerOrder(customerName);
+        orderPaymentService.processPayment(order.getTotalPrice());
+
+
+
 
         //Finally Print Bill
         System.out.println(order);
